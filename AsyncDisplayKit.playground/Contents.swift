@@ -49,6 +49,13 @@ class Root: ASDisplayNode, ASNetworkImageNodeDelegate {
         let rootSpec = ASBackgroundLayoutSpec(child: backgroundNode, background: cardImageNode)
         backgroundNode.preferredFrameSize = constrainedSize.max
         
+        cardBackground.backgroundColor = UIColor.whiteColor()
+        
+        
+        // uhhhhh
+        let ratio = ASRatioLayoutSpec(ratio: 0.75, child: cardBackground)
+        let 🙀 = ASStaticLayoutSpec(children: [])
+        
         return rootSpec
         
     }
@@ -78,7 +85,7 @@ let constrainedSize = ASSizeRange(min: size, max: size)
 rootNode.measureWithSizeRange(constrainedSize)
 rootNode.frame = CGRect(origin: origin, size: size)
 
-let url = NSURL(string: "https://thecatapi.com/api/images/get?format=src&type=png")
+let url = NSURL(string: "https://thecatapi.com/api/images/get?format=src&type=gif")
 rootNode.cardImageNode.URL = url
 
 XCPlaygroundPage.currentPage.liveView = rootNode.view

@@ -2,6 +2,15 @@
 import XCPlayground
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 
+//: ## AsyncDisplayKit - Using ASLayoutSpec
+//:
+//: Bla here we talk about important stuffs
+//: regarding the node, caching, spec stuffs
+//:
+//: ----
+//:
+//: Some more important stuffs here
+
 import AsyncDisplayKit
 
 class CardBackgroundNetworkImageNode: ASNetworkImageNode {
@@ -12,6 +21,10 @@ class CardBackgroundNetworkImageNode: ASNetworkImageNode {
         return CardBackgroundNetworkImageNode.cardImage
     }
 }
+
+//: ## Explore the ASNetworkImageNode, and basic ASLayoutSpec
+//:
+//: What happens when you combine fast image loading, caching, decoding and display with offloading expensive operations? Cool things.
 
 class Root: ASDisplayNode, ASNetworkImageNodeDelegate {
     
@@ -40,8 +53,7 @@ class Root: ASDisplayNode, ASNetworkImageNodeDelegate {
         
     }
     
-    // MARK: --- ASNetworkImageNodeDelegate ---
-    
+//: MARK: --- ASNetworkImageNodeDelegate ---
     func imageNode(imageNode: ASNetworkImageNode, didLoadImage image: UIImage) {
         print("didLoadImage")
     }
@@ -72,7 +84,7 @@ rootNode.cardImageNode.URL = url
 XCPlaygroundPage.currentPage.liveView = rootNode.view
 
 
-/* Here is the stuff I need to wrap my head around --- 🙀🙀🙀🙀🙀🙀
+/* Here is the stuffs I need to wrap my head around --- 🙀🙀🙀🙀🙀🙀
  
  ASStackLayoutSpec(direction: <#T##ASStackLayoutDirection#>, spacing: <#T##CGFloat#>, justifyContent: <#T##ASStackLayoutJustifyContent#>, alignItems: <#T##ASStackLayoutAlignItems#>, children: <#T##[ASLayoutable]#>)
  

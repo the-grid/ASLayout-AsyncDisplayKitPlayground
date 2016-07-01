@@ -79,30 +79,25 @@ class CardInfoOverlayNode: ASDisplayNode {
         backgroundColor = UIColor.whiteColor()
         usesImplicitHierarchyManagement = true
                 
-        setNewString()
+        applyStyledContent()
     }
     
     override func layoutSpecThatFits(constrainedSize: ASSizeRange) -> ASLayoutSpec {
         
         contentTextNode.flexShrink = true
         
-        let hSpec = ASStackLayoutSpec.horizontalStackLayoutSpec()
-        hSpec.alignItems = .Center
-        hSpec.justifyContent = .Start
-        hSpec.setChildren([contentTextNode])
-        
         let insets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        let hSpecWithInset = ASInsetLayoutSpec(insets: insets, child: hSpec)
+        let hSpecWithInset = ASInsetLayoutSpec(insets: insets, child: contentTextNode)
         
         return hSpecWithInset
     }
     
-    private func setNewString() {
+    private func applyStyledContent() {
         paragraph.paragraphSpacing = CardInfoOverlayNode.bodyFontSize * 0.4
         
-        let titleFont = UIFont.systemFontOfSize(32, weight: UIFontWeightRegular)
+        let titleFont = UIFont.systemFontOfSize(CardInfoOverlayNode.titleFontSize, weight: UIFontWeightRegular)
         let titleAttrs = [NSFontAttributeName: titleFont, NSForegroundColorAttributeName: titleColor, NSParagraphStyleAttributeName: paragraph]
-        let bodyFont = UIFont.systemFontOfSize(16, weight: UIFontWeightThin)
+        let bodyFont = UIFont.systemFontOfSize(CardInfoOverlayNode.bodyFontSize, weight: UIFontWeightThin)
         let bodyAttrs = [NSFontAttributeName: bodyFont, NSForegroundColorAttributeName: bodyColor, NSParagraphStyleAttributeName: paragraph]
         let attributionNameAttrs = [NSFontAttributeName: bodyFont, NSForegroundColorAttributeName: attributionColor, NSParagraphStyleAttributeName: paragraph]
         let attributionAuthorAttrs = [NSFontAttributeName: bodyFont, NSForegroundColorAttributeName: attribution2Color, NSParagraphStyleAttributeName: paragraph]

@@ -1,2 +1,2 @@
 # AsyncDisplayKitPlayground
-just what it says
+fun way to learn ASLayout with AsyncDisplayKit [AsyncDisplayKit](http://asyncdisplaykit.org )

@@ -131,7 +131,7 @@ class Root: ASDisplayNode, ASNetworkImageNodeDelegate {
     
     let backgroundNode = ASDisplayNode()
     let cardImageNode = CardBackgroundNetworkImageNode()
-    let cardInfoOverlayNode = CardInfoOverlayNode(title: "Use Funtional Swift Wisely", body: "There is a little known secret about Swift functional programming. It get's absurd by overuse of custom operators and impossible to follow event streams. Then curry the cryptic operators and make a truly painful thing.", publisherName: "Facebook", authorName: "Nick Velloff")
+    let cardInfoOverlayNode = CardInfoOverlayNode(title: "Use Funtional Swift Wisely", body: "There is a little known secret about Swift functional programming. It get's absurd by overuse of custom operators and impossible to follow event streams. Then curry the cryptic operators and make a truly painful thing.", publisherName: "The Grid", authorName: "Nick Velloff")
     
     override init() {
         super.init()

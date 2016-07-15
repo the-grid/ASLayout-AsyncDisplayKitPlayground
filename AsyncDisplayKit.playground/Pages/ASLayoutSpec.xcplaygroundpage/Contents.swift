@@ -1,3 +1,5 @@
+//: [Next - Some other demo](@next)
+
 //: Please build the scheme 'AsyncDisplayKitPlayground' first
 import XCPlayground
 XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
